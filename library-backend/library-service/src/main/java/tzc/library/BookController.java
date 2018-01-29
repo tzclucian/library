@@ -58,9 +58,9 @@ public class BookController {
         return new ResponseEntity<Book>(HttpStatus.NOT_IMPLEMENTED);
     }
 
-    @RequestMapping(value = "/example/{bookId}")
+    @RequestMapping(value = "/example/{id}")
     public ResponseEntity<?> completeExample(
-            @PathVariable Long id,
+            @PathVariable String id,
             @RequestParam String queryParam1,
             @RequestParam(required = false) String queryParam2,
             @RequestHeader(required = false) String myCustomHeader,
@@ -71,14 +71,14 @@ public class BookController {
         // This allows us to use any type for the ResponseBody
         // See the ResponseBody annotation
 
-        LOGGER.info("Book id from request: ", id);
-        LOGGER.info("Query parameter 1: ", queryParam1);
-        LOGGER.info("Query parameter 2: ", queryParam2);
-        LOGGER.info("Header parameter: ", myCustomHeader);
-        LOGGER.info("Request body: ", book );
+        LOGGER.info("Book id from request: " + id);
+        LOGGER.info("Query parameter 1: " + queryParam1);
+        LOGGER.info("Query parameter 2: " + queryParam2);
+        LOGGER.info("Header parameter: " + myCustomHeader);
+        LOGGER.info("Request body: " + book);
 
-        if (id % 2 == 1) {
-            return new ResponseEntity<String>("{'error': 'We only accept even numbers.'}", HttpStatus.BAD_REQUEST);
+        if (id.length() % 2 == 1) {
+            return new ResponseEntity<String>("{'error': 'We only accept IDs with even length.'}", HttpStatus.BAD_REQUEST);
         }
 
         return new ResponseEntity<Book>(book, HttpStatus.OK);
