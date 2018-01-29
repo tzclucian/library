@@ -49,7 +49,7 @@ public class BookController {
         return new ResponseEntity<Book>(HttpStatus.NOT_IMPLEMENTED);
     }
 
-    @RequestMapping(value = "/{id}")
+    @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
     public ResponseEntity<?> deleteBook(@PathVariable String id) {
         LOGGER.info("Deleting book with id: " + id);
 
@@ -58,7 +58,7 @@ public class BookController {
         return new ResponseEntity<Book>(HttpStatus.NOT_IMPLEMENTED);
     }
 
-    @RequestMapping(value = "/example/{id}")
+    @RequestMapping(value = "/example/{id}", method = RequestMethod.POST)
     public ResponseEntity<?> completeExample(
             @PathVariable String id,
             @RequestParam String queryParam1,
