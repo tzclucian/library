@@ -1,0 +1,4 @@
+server:
+  port: 8123
+  contextPath: /api/library/versions/1
+  baseUrl: http://localhost:${server.port}${server.contextPath}
