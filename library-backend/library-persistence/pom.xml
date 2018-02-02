@@ -3,20 +3,18 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>library-parent</artifactId>
+        <artifactId>library-backend</artifactId>
         <groupId>tzc.coding</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
-    <packaging>pom</packaging>
-    <modules>
-        <module>library-service</module>
-        <module>library-model</module>
-        <module>library-persistence</module>
-    </modules>
-
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>library-backend</artifactId>
+    <artifactId>library-persistence</artifactId>
+    <packaging>pom</packaging>
+    <modules>
+        <module>library-persistence-api</module>
+        <module>library-persistence-jpa</module>
+    </modules>
 
     <build>
         <plugins>
@@ -32,4 +30,5 @@
             </plugin>
         </plugins>
     </build>
+
 </project>

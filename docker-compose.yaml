@@ -1,0 +1,12 @@
+version: '2'
+services:
+  mysql:
+    image: mysql
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: root
+      MYSQL_DATABASE: libraryDB
+      MYSQL_USER: libraryUser
+      MYSQL_PASSWORD: libraryPass
+    ports:
+      - "3306:3306"

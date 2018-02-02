@@ -5,10 +5,12 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Import;
 
 /**
+ * The Library service.
+ *
  * @author Lucian Tuca
  * @date 25/01/2018
  */
-@SpringBootApplication
+@SpringBootApplication(scanBasePackages = "tzc.library")
 @Import(SwaggerConfig.class)
 public class LibraryService {
     public static void main(String[] args) {

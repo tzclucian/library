@@ -17,7 +17,12 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.web.util.UriComponentsBuilder;
 
+import tzc.library.persistence.jpa.AuthorEmbeddable;
+import tzc.library.persistence.jpa.BookEntity;
+
 /**
+ * Integration Tests for the {@link BookController}
+ *
  * @author Lucian Tuca
  * @date 29/01/2018
  */
@@ -37,9 +42,13 @@ public class BookControllerIT {
     public void exampleTest() {
         LOGGER.info("Starting the test.");
 
-        Book book = new Book();
+        Book book = new BookEntity();
         book.setId("1234");
-        book.setAuthor("Lucian");
+
+        Author author = new AuthorEmbeddable();
+        author.setName("Lucian");
+
+        book.setAuthor(author);
         book.setContent("A lot of stuff here");
 
         final TestRestTemplate restTemplate = new TestRestTemplate();
