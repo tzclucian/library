@@ -1,0 +1,9 @@
+# Docker-Compose file used to bring up a Couchbase DB instance
+version: '2'
+services:
+
+  couchbase:
+    image: couchbase-library
+    ports:
+     - "8091-8093:8091-8093"
+     - "11210:11210"

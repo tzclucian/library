@@ -14,6 +14,7 @@
     <modules>
         <module>library-persistence-api</module>
         <module>library-persistence-jpa</module>
+        <module>library-persistence-couchbase</module>
     </modules>
 
     <build>
