@@ -25,11 +25,11 @@ public class AuthorEmbeddable implements Author {
 
     @Override
     public String getName() {
-        return null;
+        return name;
     }
 
     @Override
     public void setName(String name) {
-
+        this.name = name;
     }
 }
