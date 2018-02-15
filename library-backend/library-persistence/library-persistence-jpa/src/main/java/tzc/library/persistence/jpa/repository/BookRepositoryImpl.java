@@ -1,5 +1,8 @@
 package tzc.library.persistence.jpa.repository;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -38,5 +41,11 @@ public class BookRepositoryImpl implements BookRepository {
     public void deleteBook(String idOfBookToBeDeleted) {
         Book book = bookJpaRepository.findOne(idOfBookToBeDeleted);
         bookJpaRepository.delete(new BookEntity(book));
+    }
+
+    @Override
+    public List<Book> findAllBooksByAuthorName(String authorName) {
+        List<BookEntity> bookEntities = bookJpaRepository.findAllByAuthor_Name(authorName);
+        return new ArrayList<>(bookEntities);
     }
 }

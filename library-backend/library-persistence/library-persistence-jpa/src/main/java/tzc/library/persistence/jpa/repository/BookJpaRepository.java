@@ -1,5 +1,7 @@
 package tzc.library.persistence.jpa.repository;
 
+import java.util.List;
+
 import org.springframework.data.repository.CrudRepository;
 
 import tzc.library.persistence.jpa.BookEntity;
@@ -11,4 +13,6 @@ import tzc.library.persistence.jpa.BookEntity;
  * @date 01/02/2018
  */
 public interface BookJpaRepository extends CrudRepository<BookEntity, String> {
+    //@Query("SELECT b FROM Book b WHERE b.name = ?1")
+    List<BookEntity> findAllByAuthor_Name(String authorName);
 }

@@ -1,5 +1,7 @@
 package tzc.library.service;
 
+import java.util.List;
+
 import tzc.library.Book;
 
 /**
@@ -16,4 +18,6 @@ public interface BookService {
     Book updateBook(String idOfBookToBeUpdated, Book newBook);
 
     void deleteBook(String idOfBookToBeDeleted);
+
+    List<Book> findAllBooksByAuthorName(String authorName);
 }

@@ -1,6 +1,8 @@
 package tzc.library.persistence.api;
 
 
+import java.util.List;
+
 import tzc.library.Book;
 
 /**
@@ -17,4 +19,6 @@ public interface BookRepository {
     Book updateBook(String idOfBookToBeUpdated, Book newBook);
 
     void deleteBook(String idOfBookToBeDeleted);
+
+    List<Book> findAllBooksByAuthorName(String authorName);
 }

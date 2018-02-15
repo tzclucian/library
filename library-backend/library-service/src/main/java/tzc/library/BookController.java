@@ -1,5 +1,7 @@
 package tzc.library;
 
+import java.util.List;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import tzc.library.service.BookService;
@@ -17,7 +20,7 @@ import tzc.library.service.BookService;
  * The Book controller.
  *
  * @author Lucian Tuca
- * @date 25/01/2018
+ * created on 25/01/2018
  */
 @RestController
 @RequestMapping("/book")
@@ -34,7 +37,7 @@ public class BookController {
 
         bookService.createBook(book);
 
-        return new ResponseEntity<Book>(book, HttpStatus.CREATED);
+        return new ResponseEntity<>(book, HttpStatus.CREATED);
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.GET)
@@ -43,7 +46,7 @@ public class BookController {
 
         Book book = bookService.readBook(id);
 
-        return new ResponseEntity<Book>(book, HttpStatus.OK);
+        return new ResponseEntity<>(book, HttpStatus.OK);
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.PUT)
@@ -52,7 +55,7 @@ public class BookController {
 
         Book book = bookService.updateBook(id, newBook);
 
-        return new ResponseEntity<Book>(book, HttpStatus.OK);
+        return new ResponseEntity<>(book, HttpStatus.OK);
     }
 
     @RequestMapping(value = "/{id}", method = RequestMethod.DELETE)
@@ -62,5 +65,15 @@ public class BookController {
         bookService.deleteBook(id);
 
         return new ResponseEntity<Book>(HttpStatus.NO_CONTENT);
+    }
+
+    @RequestMapping(value = "/", method = RequestMethod.GET)
+    public ResponseEntity<List<Book>> findBooksByAuthorName(@RequestParam String authorName) {
+        List<Book> allBooksByAuthorName = bookService.findAllBooksByAuthorName(authorName);
+        if (allBooksByAuthorName == null || allBooksByAuthorName.isEmpty()) {
+            return new ResponseEntity<>(HttpStatus.NOT_FOUND);
+        }
+
+        return new ResponseEntity<>(allBooksByAuthorName, HttpStatus.OK);
     }
 }

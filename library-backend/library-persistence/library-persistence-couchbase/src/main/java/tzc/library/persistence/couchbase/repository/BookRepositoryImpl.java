@@ -1,5 +1,8 @@
 package tzc.library.persistence.couchbase.repository;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
@@ -27,6 +30,11 @@ public class BookRepositoryImpl implements BookRepository {
     @Override
     public Book readBook(String id) {
         return bookCouchbaseRepository.findOne(id);
+    }
+
+    @Override
+    public List<Book> findAllBooksByAuthorName(String authorName) {
+        return new ArrayList<>(bookCouchbaseRepository.findBooksByAuthorName(authorName));
     }
 
     @Override
