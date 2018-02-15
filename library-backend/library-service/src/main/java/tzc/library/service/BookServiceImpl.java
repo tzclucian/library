@@ -12,7 +12,7 @@ import tzc.library.persistence.api.BookRepository;
  * Implementation of the {@link BookService} using persistence, see {@link BookRepository}
  *
  * @author Lucian Tuca
- * @date 01/02/2018
+ * created on 01/02/2018
  */
 @Service
 public class BookServiceImpl implements BookService {
@@ -22,8 +22,7 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public Book createBook(Book book) {
-        Book savedBook = bookRepository.createBook(book);
-        return savedBook;
+        return bookRepository.createBook(book);
     }
 
     @Override

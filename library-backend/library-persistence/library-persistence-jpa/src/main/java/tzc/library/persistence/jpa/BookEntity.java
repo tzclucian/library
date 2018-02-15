@@ -13,7 +13,7 @@ import tzc.library.Book;
  * Implements the {@link Book} model for JPA.
  *
  * @author Lucian Tuca
- * @date 01/02/2018
+ * created on 01/02/2018
  */
 @Entity(name = "book")
 public class BookEntity implements Book {

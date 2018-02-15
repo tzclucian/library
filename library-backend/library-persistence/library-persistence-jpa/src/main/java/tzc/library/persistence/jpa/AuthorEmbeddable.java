@@ -9,7 +9,7 @@ import tzc.library.Author;
  * Implements the {@link Author} model for JPA.
  *
  * @author Lucian Tuca
- * @date 02/02/2018
+ * created on 02/02/2018
  */
 @Embeddable
 public class AuthorEmbeddable implements Author {

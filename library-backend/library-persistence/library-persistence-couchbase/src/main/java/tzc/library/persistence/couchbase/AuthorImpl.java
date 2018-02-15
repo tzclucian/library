@@ -5,7 +5,7 @@ import tzc.library.Author;
 /**
  * Simple implementation for {@link Author}
  * @author Lucian Tuca
- * @date 09/02/2018
+ * created on 09/02/2018
  */
 public class AuthorImpl implements tzc.library.Author {
     private String name;

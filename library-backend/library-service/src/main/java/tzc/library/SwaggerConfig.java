@@ -13,7 +13,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
  * @author Lucian Tuca
- * @date 29/01/2018
+ * created on 29/01/2018
  */
 @Configuration
 @EnableSwagger2
@@ -28,7 +28,7 @@ public class SwaggerConfig {
                 .apiInfo(metaData());
     }
     private ApiInfo metaData() {
-        ApiInfo apiInfo = new ApiInfo(
+        return new ApiInfo(
                 "Library - Spring Boot REST API",
                 "Spring Boot REST API for Library",
                 "1.0",
@@ -36,6 +36,5 @@ public class SwaggerConfig {
                 new Contact("Lucian Tuca", "https://github.com/tzclucian/", "tzclucian@gmail.com"),
                 "Apache License Version 2.0",
                 "https://www.apache.org/licenses/LICENSE-2.0");
-        return apiInfo;
     }
 }

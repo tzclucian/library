@@ -14,7 +14,7 @@ import tzc.library.persistence.jpa.BookEntity;
  * {@link Book} repository implementation using the JPA Spring generated bean {@link BookJpaRepository}
  *
  * @author Lucian Tuca
- * @date 02/02/2018
+ * created on 02/02/2018
  */
 @Repository
 public class BookRepositoryImpl implements BookRepository {

@@ -17,7 +17,7 @@ import tzc.library.Book;
  * Spring {@link Configuration} of the JPA persistence module.
  *
  * @author Lucian Tuca
- * @date 02/02/2018
+ * created on 02/02/2018
  */
 @Configuration
 @ComponentScan

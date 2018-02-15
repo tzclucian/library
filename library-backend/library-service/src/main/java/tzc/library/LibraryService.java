@@ -8,7 +8,7 @@ import org.springframework.context.annotation.Import;
  * The Library service.
  *
  * @author Lucian Tuca
- * @date 25/01/2018
+ * created on 25/01/2018
  */
 @SpringBootApplication(scanBasePackages = "tzc.library")
 @Import(SwaggerConfig.class)

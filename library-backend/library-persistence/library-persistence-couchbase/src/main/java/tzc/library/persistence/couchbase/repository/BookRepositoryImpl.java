@@ -14,7 +14,7 @@ import tzc.library.persistence.couchbase.BookDocument;
  * Implementation of the {@link BookRepository} using the the {@link BookCouchbaseRepository}
  *
  * @author Lucian Tuca
- * @date 09/02/2018
+ * created on 09/02/2018
  */
 @Repository
 public class BookRepositoryImpl implements BookRepository {

@@ -1,3 +1,4 @@
+#!/usr/bin/env bash
 set -x
 set -m
 
@@ -28,7 +29,7 @@ curl -X POST -H "Authorization: Basic bGlicmFyeVVzZXI6bGlicmFyeVBhc3N3b3Jk" -d n
 
 sleep 17
 
-# Sleep a little bit more so the data is succesfully inserted
+# Sleep a little bit more so the data is successfully inserted
 echo "[INFO] Waiting for data to be inserted..."
 sleep 5
 

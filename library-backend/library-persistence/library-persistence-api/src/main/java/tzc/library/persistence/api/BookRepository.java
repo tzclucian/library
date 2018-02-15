@@ -9,7 +9,7 @@ import tzc.library.Book;
  * Defines how a {@link Book} repository should behave.
  *
  * @author Lucian Tuca
- * @date 01/02/2018
+ * created on 01/02/2018
  */
 public interface BookRepository {
     Book createBook(Book book);

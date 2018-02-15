@@ -13,7 +13,7 @@ import tzc.library.Book;
  * Couchbase specific model.
  *
  * @author Lucian Tuca
- * @date 09/02/2018
+ * created on 09/02/2018
  */
 @Document
 public class BookDocument implements Book {

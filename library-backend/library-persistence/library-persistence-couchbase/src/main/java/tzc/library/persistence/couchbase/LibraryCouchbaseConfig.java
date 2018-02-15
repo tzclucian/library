@@ -1,6 +1,6 @@
 package tzc.library.persistence.couchbase;
 
-import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 import org.slf4j.Logger;
@@ -24,7 +24,7 @@ import tzc.library.Book;
  * Configuration class for the all the Couchbase settings.
  *
  * @author Lucian Tuca
- * @date 09/02/2018
+ * created on 09/02/2018
  */
 @Configuration
 @ComponentScan
@@ -74,7 +74,7 @@ public class LibraryCouchbaseConfig extends AbstractCouchbaseConfiguration imple
 
     @Override
     protected List<String> getBootstrapHosts() {
-        return Arrays.asList(couchbaseHost);
+        return Collections.singletonList(couchbaseHost);
     }
 
     @Override

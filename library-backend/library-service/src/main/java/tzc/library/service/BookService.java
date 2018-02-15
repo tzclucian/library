@@ -8,7 +8,7 @@ import tzc.library.Book;
  * Defines how a {@link BookService} should behave.
  *
  * @author Lucian Tuca
- * @date 01/02/2018
+ * created on 01/02/2018
  */
 public interface BookService {
     Book createBook(Book book);
