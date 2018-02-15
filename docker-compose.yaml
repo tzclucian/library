@@ -1,0 +1,26 @@
+# Docker-Compose file used to bring up a Couchbase DB instance
+version: '2'
+services:
+
+  couchbase:
+    image: couchbase-library
+    restart: always
+    ports:
+     - "8091-8093:8091-8093"
+     - "11210:11210"
+
+  library-backend:
+    image: library-service:latest
+    ports:
+     - "8123:8123"
+    links:
+      - couchbase
+    depends_on:
+      - couchbase
+    entrypoint:
+          - java
+          - -Xmx640m
+          - -Xms256m
+          - -Dcouchbase.host=couchbase:11210
+          - -jar
+          - library-service-1.5.9.RELEASE.jar
