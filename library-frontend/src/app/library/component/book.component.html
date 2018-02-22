@@ -1,0 +1,20 @@
+<mat-card class="book-card" *ngIf="book !== undefined && book.author !== undefined">
+  <mat-card-header>
+    <div mat-card-avatar></div>
+    <mat-card-title>Title: {{ book.id }}</mat-card-title>
+    <mat-card-subtitle>Author: {{ book.author.name }}</mat-card-subtitle>
+  </mat-card-header>
+
+  <mat-card-content>
+    <p>
+      {{ book.content }}
+    </p>
+  </mat-card-content>
+
+  <mat-card-actions>
+    <button mat-button>LIKE</button>
+    <button mat-button>SHARE</button>
+  </mat-card-actions>
+
+</mat-card>
+

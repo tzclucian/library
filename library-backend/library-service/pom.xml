@@ -91,7 +91,7 @@
                         <artifactId>docker-maven-plugin</artifactId>
                         <version>1.0.0</version>
                         <configuration>
-                            <imageName>library/${project.artifactId}</imageName>
+                            <imageName>library/backend</imageName>
                             <dockerDirectory>${project.basedir}/src/main/docker</dockerDirectory>
                             <resources>
                                 <resource>

@@ -1,0 +1,9 @@
+.block-parent {
+  display: flex;
+  flex-direction: row;
+
+}
+
+.book-card {
+  width: 400px;
+}

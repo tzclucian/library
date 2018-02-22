@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Import;
  * created on 25/01/2018
  */
 @SpringBootApplication(scanBasePackages = "tzc.library")
-@Import(SwaggerConfig.class)
+@Import({SwaggerConfig.class, CorsConfiguration.class})
 public class LibraryService {
     public static void main(String[] args) {
         SpringApplication.run(LibraryService.class, args);

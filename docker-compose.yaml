@@ -10,7 +10,7 @@ services:
      - "11210:11210"
 
   library-backend:
-    image: library-service:latest
+    image: library/backend:latest
     ports:
      - "8123:8123"
     links:
@@ -24,3 +24,11 @@ services:
           - -Dcouchbase.host=couchbase:11210
           - -jar
           - library-service-1.5.9.RELEASE.jar
+
+#  library-frontend:
+#    # TODO: Where is LibraryClient service pointing to?
+#    image: library/frontend:latest
+#    depends_on:
+#      - library-backend
+#    ports:
+#     - "4200:4200"
