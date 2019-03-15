@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import tzc.library.Book;
+import tzc.library.metrics.MeteringUtil;
 import tzc.library.persistence.api.BookRepository;
 
 /**
@@ -20,6 +21,9 @@ public class BookServiceImpl implements BookService {
     @Autowired
     private BookRepository bookRepository;
 
+    @Autowired
+    private MeteringUtil meteringUtil;
+
     @Override
     public Book createBook(Book book) {
         return bookRepository.createBook(book);
@@ -27,6 +31,7 @@ public class BookServiceImpl implements BookService {
 
     @Override
     public Book readBook(String id) {
+        meteringUtil.registerCall();
         return bookRepository.readBook(id);
     }
 

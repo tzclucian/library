@@ -1,8 +1,22 @@
 server:
   port: 8123
-  contextPath: /api/library/versions/1
+  contextPath: /
   baseUrl: http://localhost:${server.port}${server.contextPath}
 
 cors:
   allowedOrigins:
     - 'http://localhost:4200'
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include:
+        - metrics
+        - prometheus
+        - health
+  metrics:
+    enable[http]: true
+    enable[logback]: true
+    enable[tomcat]: true
+    enable[jvm.classes]: true
